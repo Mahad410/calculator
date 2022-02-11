@@ -84,7 +84,6 @@ const nine = document.getElementById('nine').addEventListener('click', () => {
 });
 // point
 const point = document.getElementById('point').addEventListener('click', () => {
-    console.log(display.innerHTML)
     if (display.innerHTML == '') {
         display.innerText += '0.';
     } else {
