@@ -12,6 +12,7 @@
 <body>
     <div class="container">
         <!-- display -->
+        <div id="h_screen" class="display_container"></div>
         <div id="screen" class="display_container"></div>
 
         <!-- first row -->
@@ -31,13 +32,13 @@
             </div>
             <!-- C button -->
             <div class="dark">
-                <button type="button" id="C">
+                <button type="button" id="C" onclick="clr()">
                     C
                 </button>
             </div>
             <!-- backspace button -->
             <div class="dark">
-                <button type="button" id="del">
+                <button type="button" id="del" onclick="del()">
                     del
                 </button>
             </div>
@@ -73,19 +74,19 @@
             <!-- third row buttons -->
             <!-- seven -->
             <div class="light">
-                <button type="button" id="seven">
+                <button type="button" id="seven" onclick="number(7)">
                     7
                 </button>
             </div>
             <!-- eight -->
             <div class="light">
-                <button type="button" id="eight">
+                <button type="button" id="eight" onclick="number(8)">
                 8
                 </button>
             </div>
             <!-- nine -->
             <div class="light">
-                <button type="button" id="nine">
+                <button type="button" id="nine" onclick="number(9)">
                     9
                 </button>
             </div>
@@ -99,19 +100,19 @@
             <!-- fourth row buttons -->
             <!-- four -->
             <div class="light">
-                <button type="button" id="four">
+                <button type="button" id="four" onclick="number(4)">
                     4
                 </button>
             </div>
             <!-- five -->
             <div class="light">
-                <button type="button" id="five">
+                <button type="button" id="five" onclick="number(5)">
                 5
                 </button>
             </div>
             <!-- six -->
             <div class="light">
-                <button type="button" id="six">
+                <button type="button" id="six" onclick="number(6)">
                     6
                 </button>
             </div>
@@ -125,19 +126,19 @@
             <!-- fifth row buttons -->
             <!-- one -->
             <div class="light">
-                <button type="button" id="one">
+                <button type="button" id="one" onclick="number(1)">
                     1
                 </button>
             </div>
             <!-- two -->
             <div class="light">
-                <button type="button" id="two">
+                <button type="button" id="two" onclick="number(2)">
                 2
                 </button>
             </div>
             <!-- three -->
             <div class="light">
-                <button type="button" id="three">
+                <button type="button" id="three" onclick="number(3)">
                     3
                 </button>
             </div>
@@ -157,7 +158,7 @@
             </div>
             <!-- zero -->
             <div class="light">
-                <button type="button" id="zero">
+                <button type="button" id="zero" onclick="number(0)">
                 0
                 </button>
             </div>
