@@ -136,7 +136,7 @@ var res = 0;
 function number(num) {
     if (opr == 0) {
         x = display.innerText += num;
-    } else if (opr != 0 && opr != '^2') {
+    } else if (opr != 0 && opr != '^2' && opr != '1/x' && opr != '2sq') {
         y = display.innerText += num;
     }
     const plus = document.getElementById('plus').addEventListener('click', () => {
@@ -161,6 +161,19 @@ function number(num) {
         opr = '^2';
         display.innerText = "Press '='";
     });
+    const divideByX = document.getElementById('d_x').addEventListener('click', () => {
+        opr = '1/x';
+        display.innerText = "Press '='";
+    });
+    const remainder = document.getElementById('remainder').addEventListener('click', () => {
+        opr = '%';
+        display.innerText = '';
+    });
+    const squareF = document.getElementById('t_und_root').addEventListener('click', () => {
+        opr = '2sq';
+        display.innerText = "Press ' = '";
+    });
+
     const equal = document.getElementById('result').addEventListener('click', () => {
         if (opr == '+') {
             res = parseInt(x) + parseInt(y);
@@ -168,15 +181,28 @@ function number(num) {
         } else if (opr == '-') {
             res = parseInt(x) - parseInt(y);
             display.innerText = res;
+            x, y = 0
         } else if (opr == '*') {
             res = parseInt(x) * parseInt(y);
             display.innerText = res;
+            x, y = 0
         } else if (opr == '/') {
             res = parseInt(x) / parseInt(y);
             display.innerText = res;
         } else if (opr == '^2') {
             res = parseInt(x) * 2;
             display.innerText = res;
+        } else if (opr == '1/x') {
+            res = 1 / parseInt(x);
+            display.innerText = res;
+        } else if (opr == '%') {
+            res = parseInt(x) % parseInt(y);
+            display.innerText = res;
+        } else if (opr == '2sq') {
+            res = Math.sqrt(parseInt(x));
+            display.innerText = res;
+        } else {
+            alert('select an operator');
         }
     });
 }
@@ -187,5 +213,5 @@ function del() {
 
 function clr() {
     display.innerText = '';
-    console.log(typeof(display.innerText));
+
 }
