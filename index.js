@@ -134,21 +134,19 @@ var num = 0;
 var res = 0;
 
 function number(num) {
-    if (opr == 0) {
-        x = display.innerText += num;
-    } else if (opr != 0 && opr != '^2' && opr != '1/x' && opr != '2sq') {
+    if (opr != 0 && opr != '^2' && opr != '1/x' && opr != '2sq') {
         y = display.innerText += num;
+    } else {
+        x = display.innerText += num;
     }
     const plus = document.getElementById('plus').addEventListener('click', () => {
         opr = '+';
         display.innerText = '';
     });
-
     const minus = document.getElementById('minus').addEventListener('click', () => {
         opr = '-';
         display.innerText = '';
     });
-
     const multi = document.getElementById('multiply').addEventListener('click', () => {
         opr = '*';
         display.innerText = '';
@@ -173,7 +171,6 @@ function number(num) {
         opr = '2sq';
         display.innerText = "Press ' = '";
     });
-
     const equal = document.getElementById('result').addEventListener('click', () => {
         if (opr == '+') {
             res = parseInt(x) + parseInt(y);
@@ -204,12 +201,27 @@ function number(num) {
         } else {
             alert('select an operator');
         }
+        const clearAll = document.getElementById('CE').addEventListener('click', () => {
+            if (y != 0) {
+                y = 0;
+            } else {
+                x = 0;
+            }
+        });
+        const del = document.getElementById('del').addEventListener('click', () => {
+            display.innerText = display.innerText.slice(0, display.innerText.length - 1);
+        });
+        const clear = document.getElementById('C').addEventListener('click', () => {
+            display.innerText = '';
+            x = 0;
+            y = 0;
+            opr = 0;
+        });
     });
+
 }
 
-function del() {
-    display.innerText = display.innerText.slice(0, display.innerText.length - 1);
-}
+
 
 function clr() {
     display.innerText = '';
