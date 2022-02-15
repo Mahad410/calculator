@@ -220,10 +220,3 @@ function number(num) {
     });
 
 }
-
-
-
-function clr() {
-    display.innerText = '';
-
-}
